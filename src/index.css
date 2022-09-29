@@ -1,0 +1,22 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+}
+
+@keyframes loadingAnimation {
+  from {
+    opacity: 1;
+    color: purple;
+  }
+
+  to {
+    opacity: 0.5;
+    color: purple;
+  }
+}
+
+.loading {
+  animation-duration: 0.1s;
+  animation-name: loadingAnimation;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
