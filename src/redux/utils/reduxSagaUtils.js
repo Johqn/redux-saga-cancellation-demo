@@ -8,7 +8,7 @@ import { call, cancel, fork, put, take } from 'redux-saga/effects';
  */
 export const asyncCancellableSaga = (saga, cancelActionType) =>
   function* (...args) {
-    // Génére un id via un alogorithme résistant au collisions
+    // Génére un id via un algorithme résistant au collisions
     // pour distinguer les actions qui permettront d'interrompre
     // cette tâche dans le cas où il n'y aurait pas d'annulation.
     const taskId = yield call(cuid);
