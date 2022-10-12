@@ -21,9 +21,9 @@ const CounterTester = ({
         <span className={countIsLoading ? 'loading' : ''}>{count}</span>
       </p>
       <p>
-        <label htmlFor="increment_amount">Increment amount</label>
+        <label htmlFor="increment_step">Increment step</label>{' '}
         <input
-          id="increment_amount"
+          id="increment_step"
           type="number"
           value={step}
           onInput={(e) => setStep(Number(e.target.value))}

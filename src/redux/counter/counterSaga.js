@@ -21,16 +21,26 @@ function* incrementAsyncSaga(action) {
   const start = new Date();
   const startTime = new Date().getTime();
   const end = new Date();
-  end.setTime(start.getTime() + delay);
+  end.setTime(startTime + delay);
   const endTime = end.getTime();
 
   try {
-    yield put(loadingStart({ reqId, max: endTime - startTime }));
+    yield put(
+      loadingStart({
+        reqId,
+        max: endTime - startTime,
+      })
+    );
     let now;
     do {
       yield wait(10);
       now = new Date().getTime();
-      yield put(loadingUpdate({ reqId, progression: now - startTime }));
+      yield put(
+        loadingUpdate({
+          reqId,
+          progression: now - startTime,
+        })
+      );
     } while (now < end);
     yield put(increment({ step }));
     yield put(loadingEnd({ reqId }));
